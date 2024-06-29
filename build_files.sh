@@ -1,2 +1,10 @@
+python3 -m venv venv
+source venv/bin/activate
+
+pip install --upgrade pip
+
 pip install -r requirements.txt
-python3.9 manage.py collectstatic
+
+python3 manage.py collectstatic
+deactivate
+

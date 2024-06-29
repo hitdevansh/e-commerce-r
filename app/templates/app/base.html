@@ -28,16 +28,13 @@
       }
 
       body{
-          {% comment %} font-size:14px; {% endcomment %}
           background: #fff;
           max-width:1920px;
           margin:0 auto;
           overflow-x:hidden;
-          {% comment %} font-family: poppins; {% endcomment %}
       }
       #footer{
           margin-top:65px;
-          {% comment %} padding: 3rem; {% endcomment %}
           padding-top: 4rem;
           padding-bottom: 0px;
           background-color: black; 
@@ -197,7 +194,7 @@
           <ul class="navbar-nav  me-auto mb-2 mb-lg-0">
             {%if request.user.is_authenticated %}
            <li class="nav-item dropdown mx-2">
-              <a class="nav-link dropdown-toggle" style="color:blue;font-weight:600;" onmouseover="this.style.color='white'"  
+              <a class="nav-link dropdown-toggle" style="color:blue;font-weight:600;text-transform: capitalize;" onmouseover="this.style.color='white'"  
    onmouseout="this.style.color='blue'" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 {{user.username}}
               </a>
@@ -210,7 +207,7 @@
             </li>
             <li class="nav-item mx-2">
              <a href="{% url 'showcart' %}" class="nav-link" style="color:blue;font-weight:600;" onmouseover="this.style.color='white'"  
-   onmouseout="this.style.color='blue'"><span class="badge bg-danger">8</span> Cart </a>
+   onmouseout="this.style.color='blue'"><span class="badge bg-danger">{{cart_count}}</span> Cart </a>
             </li>
             {%else%}
             <li class="nav-item mx-2">
@@ -273,7 +270,7 @@
           </div>
         </div>
           
-      {% comment %} <div class="container-fluid bg-dark text-center p-2 mx-8" style="width=100%;  "> {% endcomment %}
+        
        <div class="container text-center" style="width: 100%;font-weight:800px; margin-top:15px;">
           <small class="text-white" style="margin-bottom:50px;">Copyright &copy; 2023 || Designed By Devansh || </small>
           <img src="{% static 'app/images/payment.png' %}" alt="" srcset="" class="img-fluid" height="5px">
